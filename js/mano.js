@@ -9,11 +9,12 @@ function open_media_window() {
         this.window = wp.media({
         	       // title of wp media frame
                 title: 'Add files',
-              /*  library: {type: 'image'},*/
+              library: {type: 'pdf'},
               // can upload more than one file change to true
                 multiple: false,
                 // button text in wp media frame
-                button: {text: 'Insert'}
+                button: {text: 'Insert'},
+               
             });
 
         var self = this; // Needed to retrieve our variable in the anonymous function below
@@ -23,7 +24,8 @@ function open_media_window() {
             	// Get media attachment details from the frame state
                 var attachment = self.window.state().get('selection').first().toJSON();
                 // here goes magic create shortcode and post to the post editor 
-                wp.media.editor.insert('[myshortcode id="' + attachment.url + '"]'); 
+                wp.media.editor.insert('[pdf-embedder url="' + attachment.url + '"]'); 
+                console.log(attachment.tag);
             });
     }
      // open media window
