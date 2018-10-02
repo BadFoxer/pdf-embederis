@@ -39,7 +39,7 @@ function open_media_window() {
               alert('Only pdf documents');
               }       
               else{
-                //call check box function
+                //call checkBox function
                 check();
               }
             function check(){
