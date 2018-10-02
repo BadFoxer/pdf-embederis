@@ -1,3 +1,4 @@
+/* iframe style */
 div.iframe-link {
 position: relative;
 float: left;
@@ -16,6 +17,7 @@ width: 90%;
     }
 
 }
+/* link on iframe experimental style not used in plugin! */
 a.iframe-link {
 position: absolute;
 top: 0;
@@ -28,8 +30,10 @@ filter: progid:DXImageTransform.Microsoft.Alpha(opacity=70);
 /*z-index: -1; */
 
 }
-.gulscias{
 
+
+/* Horizontal iframe style for horizontal pdf documents */
+.gulscias{
 position: relative;
 float: left;
 width: 100%;
@@ -38,8 +42,8 @@ margin: 0 1em 1em 0;
 
 }
 
+/*  Zoom button style   */
 .didinti{
-
 padding: 5px 5px;
 font-size: 15px;
 background: grey;
