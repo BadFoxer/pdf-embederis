@@ -54,7 +54,7 @@ function open_media_window() {
      // open media window
     this.window.open();
 
-    // dont close until the button is pressedd
+    // dont close until the button is pressed
     return false;
 }
 
