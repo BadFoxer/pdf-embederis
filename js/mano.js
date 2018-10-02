@@ -1,6 +1,4 @@
-
-
-    jQuery(document).ready(function(){
+  jQuery(document).ready(function(){
     	// run openMediaWindow function
     jQuery('#custom').click(open_media_window);
 
@@ -26,26 +24,33 @@ function open_media_window() {
         this.window.on('select', function() {
             	// Get media attachment details from the frame state
                 var attachment = self.window.state().get('selection').first().toJSON();
-                // here goes magic create shortcode and post to the post editor 
+                //get url from attachment file
                 var res =  get_url_extension(attachment.url);
+                //get checkbox id 
                 var checkBox = document.getElementById("myCheck");
 
 
                  function get_url_extension( url ) {
+                  //trim url get only extension like: pdf,jpg,png and etc..
                 return url.split(/\#|\?/)[0].split('.').pop().trim();
                  }
+                 // check if its pdf document
                  if(res != 'pdf'){
               alert('Only pdf documents');
               }       
               else{
+                //call check box function
                 check();
               }
             function check(){
+              // if checkbox is checked
             if (checkBox.checked == true){
-       alert('test');
+       alert('test'); 
+       // here goes magic create shortcode and post to the post editor 
         wp.media.editor.insert('[pdf-embedder url="' + attachment.url + '" lapas="gulscias"]'); 
          } else {
        alert('test2');
+        // here goes magic create shortcode and post to the post editor 
        wp.media.editor.insert('[pdf-embedder url="' + attachment.url + '"]'); 
     }
 }
@@ -54,7 +59,7 @@ function open_media_window() {
      // open media window
     this.window.open();
 
-    // dont close until the button is pressed
+    // dont close until the button is pressedd
     return false;
 }
 
